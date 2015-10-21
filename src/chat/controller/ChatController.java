@@ -1,5 +1,7 @@
 package chat.controller;
 
+import chat.view.ChatPopupView;
+
 /**
  * 
  * @author thod0127
@@ -7,13 +9,17 @@ package chat.controller;
  */
 public class ChatController
 {
+	
+	private ChatPopupView popups;
+	
 	public ChatController()
 	{
-		
+		popups = new ChatPopupView();
 	}
 	
 	public void start()
 	{
-		
+		popups.displayPopup("Testing!");
 	}
+	
 }
