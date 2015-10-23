@@ -31,7 +31,9 @@ public class Chatbot
 	
 	private void buildMemesList()
 	{
-		
+		//Cute Animals.
+		//Doge.
+		//10 minimum.
 	}
 	
 	private void buildPoliticalTopicsList()
