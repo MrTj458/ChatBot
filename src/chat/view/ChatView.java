@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  */
 public class ChatView
 {
-
+	
 	/**
 	 * Shows a InputDialog GUI pop-up to get an answer from the user.
 	 * 
@@ -21,12 +21,12 @@ public class ChatView
 	public String getAnswer(String displayMessage)
 	{
 		String answer = "";
-
+		
 		answer = JOptionPane.showInputDialog(null, displayMessage);
-
+		
 		return answer;
 	}
-
+	
 	/**
 	 * Shows a MessageDialog GUI pop-up to display text.
 	 * 
@@ -37,5 +37,5 @@ public class ChatView
 	{
 		JOptionPane.showMessageDialog(null, displayMessage);
 	}
-
+	
 }

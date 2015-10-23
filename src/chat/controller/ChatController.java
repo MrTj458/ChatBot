@@ -13,20 +13,20 @@ public class ChatController
 {
 	private Chatbot simplebot;
 	private ChatView display;
-
+	
 	public ChatController()
 	{
 		display = new ChatView();
 		String user = display.getAnswer("What is your name?");
 		simplebot = new Chatbot(user);
 	}
-
+	
 	public void start()
 	{
 		display.displayPopup("Hello " + simplebot.getUserName() + ".");
 		chat();
 	}
-
+	
 	private void chat()
 	{
 		String textFromUser = display.getAnswer("Talk to the chatbot.");
@@ -36,5 +36,5 @@ public class ChatController
 			textFromUser = display.getAnswer("Talk to the chatbot.");
 		}
 	}
-
+	
 }

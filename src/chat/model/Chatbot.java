@@ -14,7 +14,7 @@ public class Chatbot
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
-
+	
 	/**
 	 * Creates an instance of the Chatbot with the supplied username.
 	 * 
@@ -23,19 +23,22 @@ public class Chatbot
 	 */
 	public Chatbot(String userName)
 	{
+		this.memesList = new ArrayList<String>();
+		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;
+		this.content = "Computer";
 	}
-
+	
 	private void buildMemesList()
 	{
-
+		
 	}
-
+	
 	private void buildPoliticalTopicsList()
 	{
-
+		
 	}
-
+	
 	/**
 	 * Checks the length of the supplied string. Returns false if the supplied String is empty or null, otherwise returns true.
 	 * 
@@ -45,7 +48,7 @@ public class Chatbot
 	public boolean lengthChecker(String currentInput)
 	{
 		boolean hasLength = false;
-
+		
 		if (currentInput != null)
 		{
 			if (currentInput.length() > 0)
@@ -53,10 +56,10 @@ public class Chatbot
 				hasLength = true;
 			}
 		}
-
+		
 		return hasLength;
 	}
-
+	
 	/**
 	 * Checks if the supplied String matches the content area for this Chatbot instance.
 	 * 
@@ -68,7 +71,7 @@ public class Chatbot
 	{
 		return false;
 	}
-
+	
 	/**
 	 * Checks if supplied String matches ANY of the topics in the politicalTopicsList. Returns true if it does find a match and false if it does not match.
 	 * 
@@ -80,7 +83,7 @@ public class Chatbot
 	{
 		return false;
 	}
-
+	
 	/**
 	 * Checks to see that the supplied String value is in the current memesList variable.
 	 * 
@@ -92,7 +95,7 @@ public class Chatbot
 	{
 		return false;
 	}
-
+	
 	/**
 	 * Returns the username of this Chatbot instance.
 	 * 
@@ -102,7 +105,7 @@ public class Chatbot
 	{
 		return this.userName;
 	}
-
+	
 	/**
 	 * Returns the content area for this Chatbot instance.
 	 * 
@@ -112,7 +115,7 @@ public class Chatbot
 	{
 		return null;
 	}
-
+	
 	/**
 	 * Getter method for the memesList object.
 	 * 
@@ -122,7 +125,7 @@ public class Chatbot
 	{
 		return null;
 	}
-
+	
 	/**
 	 * Getter method for the politicalTopicList object.
 	 * 
@@ -132,7 +135,7 @@ public class Chatbot
 	{
 		return null;
 	}
-
+	
 	/**
 	 * Updates the content area for this Chatbot instance.
 	 * 
@@ -141,6 +144,6 @@ public class Chatbot
 	 */
 	public void setContent(String content)
 	{
-
+		
 	}
 }
