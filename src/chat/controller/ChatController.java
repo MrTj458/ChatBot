@@ -29,10 +29,11 @@ public class ChatController
 
 	private void chat()
 	{
-		String textFromUser = display.getAnswer("Talk to the chatbot");
+		String textFromUser = display.getAnswer("Talk to the chatbot.");
 		while (simplebot.lengthChecker(textFromUser))
 		{
 			display.displayPopup("wow " + textFromUser);
+			textFromUser = display.getAnswer("Talk to the chatbot.");
 		}
 	}
 
