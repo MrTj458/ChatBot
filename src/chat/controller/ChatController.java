@@ -7,7 +7,7 @@ import chat.model.Chatbot;
  * Controller for the Chatot project.
  * 
  * @author thod0127
- * @version 1.3 10/23/15 The chatbot now chats.
+ * @version 1.4 10/28/15 Updated the chat method.
  */
 public class ChatController
 {
