@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Base version of the 2015 Chatbot class. Only stub methods are provided. Students will complete methods as part of the project.
  * 
  * @author Trevor Hodsdon
- * @version 1.3 10/28/15 finished the buildMemesList method as well as the contentChecker and getContent.
+ * @version 1. 10/28/15 Added the memeChecker
  */
 public class Chatbot
 {
@@ -32,17 +32,20 @@ public class Chatbot
 		buildPoliticalTopicsList();
 	}
 	
+	/**
+	 * Adds all of the Strings to the memes list.
+	 */
 	private void buildMemesList()
 	{
 		this.memesList.add("doge");
 		this.memesList.add("cute animals");
-		this.memesList.add("Adam's face");
+		this.memesList.add("adams face");
 		this.memesList.add("illuminati");
-		this.memesList.add("MLG");
+		this.memesList.add("mlg");
 		this.memesList.add("dez nuts");
 		this.memesList.add("your mom");
-		this.memesList.add("Thomas's face");
-		this.memesList.add("Engineer goes camping");
+		this.memesList.add("thomas face");
+		this.memesList.add("engineer goes camping");
 		this.memesList.add("pepe");
 	}
 	
@@ -112,7 +115,17 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return false;
+		boolean isMeme = false;
+		
+		for(String meme : memesList)
+		{
+			if(currentInput.toLowerCase().contains(meme))
+			{
+				isMeme = true;
+			}
+		}
+		
+		return isMeme;
 	}
 	
 	/**
@@ -142,7 +155,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getMemesList()
 	{
-		return null;
+		return memesList;
 	}
 	
 	/**

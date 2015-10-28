@@ -7,7 +7,7 @@ import chat.model.Chatbot;
  * Controller for the Chatot project.
  * 
  * @author thod0127
- * @version 1.4 10/28/15 Updated the chat method.
+ * @version 1.5 10/28/15 Now checks for memes.
  */
 public class ChatController
 {
@@ -35,6 +35,11 @@ public class ChatController
 			if(simpleBot.contentChecker(conversation))
 			{
 				display.displayPopup("Wow I didn't know you liked " + simpleBot.getContent());
+			}
+			
+			if(simpleBot.memeChecker(conversation))
+			{
+				display.displayPopup("That's my favourite meme!");
 			}
 			
 			conversation = display.getAnswer(conversation);
