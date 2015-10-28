@@ -11,29 +11,33 @@ import chat.model.Chatbot;
  */
 public class ChatController
 {
-	private Chatbot simplebot;
+	private Chatbot simpleBot;
 	private ChatView display;
 	
 	public ChatController()
 	{
 		display = new ChatView();
 		String user = display.getAnswer("What is your name?");
-		simplebot = new Chatbot(user);
+		simpleBot = new Chatbot(user);
 	}
 	
 	public void start()
 	{
-		display.displayPopup("Hello " + simplebot.getUserName() + ".");
+		display.displayPopup("Hello " + simpleBot.getUserName() + ".");
 		chat();
 	}
 	
 	private void chat()
 	{
-		String textFromUser = display.getAnswer("Talk to the chatbot.");
-		while (simplebot.lengthChecker(textFromUser))
+		String conversation = display.getAnswer("What would  like to talk about today?");
+		while (simpleBot.lengthChecker(conversation))
 		{
-			display.displayPopup("wow " + textFromUser);
-			textFromUser = display.getAnswer("Talk to the chatbot.");
+			if(simpleBot.contentChecker(conversation))
+			{
+				display.displayPopup("Wow I didn't know you liked " + simpleBot.getContent());
+			}
+			
+			conversation = display.getAnswer(conversation);
 		}
 	}
 	
