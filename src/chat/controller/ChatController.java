@@ -36,8 +36,7 @@ public class ChatController
 			{
 				display.displayPopup("Wow I didn't know you liked " + simpleBot.getContent());
 			}
-			
-			if(simpleBot.memeChecker(conversation))
+			else if(simpleBot.memeChecker(conversation))
 			{
 				display.displayPopup("That's my favourite meme!");
 			}

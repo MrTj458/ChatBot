@@ -119,7 +119,7 @@ public class Chatbot
 		
 		for(String meme : memesList)
 		{
-			if(currentInput.toLowerCase().contains(meme))
+			if(currentInput.toLowerCase().contains(meme.toLowerCase()))
 			{
 				isMeme = true;
 			}
