@@ -11,6 +11,7 @@ import chat.model.Chatbot;
  */
 public class ChatController
 {
+	
 	private Chatbot simpleBot;
 	private ChatView display;
 	

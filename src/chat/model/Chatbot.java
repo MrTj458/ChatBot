@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Base version of the 2015 Chatbot class. Only stub methods are provided. Students will complete methods as part of the project.
  * 
  * @author Trevor Hodsdon
- * @version 1. 10/28/15 Added the memeChecker
+ * @version 1.6 11/3/15 Added the memeChecker
  */
 public class Chatbot
 {
@@ -126,6 +126,48 @@ public class Chatbot
 		}
 		
 		return isMeme;
+	}
+	
+	public String processConversation(String currentInput)
+	{
+		String nextConversation = "What would you like to talk about next?";
+		int randomTopic = (int) (Math.random() * 5); //Random number between 0 and 4.
+		
+		switch(randomTopic)
+		{
+			case 0:
+				if(contentChecker(currentInput))
+				{
+					nextConversation = "You tal about my special topic! What else do you like?";
+				}
+				break;
+			case 1:
+				if(memeChecker(currentInput))
+				{
+					nextConversation = "That is a popular meme this year! Such wow much impressed. What is your favorite food?";
+				}
+				break;
+			case 2:
+				if(politicalTopicChecker(currentInput))
+				{
+					nextConversation = "coment and a question";
+				}
+				break;
+			case 3:
+				if(currentInput.contains("like cars"))
+				{
+					nextConversation = "I like cars too! Do you like cats?";
+				}
+				break;
+			case 4:
+				nextConversation = "Neat. Do you like olives?";
+				break;
+			default:
+				nextConversation = "Cool. Do you like to watch TV?";
+				break;
+		}
+		
+		return nextConversation;
 	}
 	
 	/**
