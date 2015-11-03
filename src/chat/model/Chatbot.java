@@ -10,6 +10,7 @@ import java.util.ArrayList;
  */
 public class Chatbot
 {
+	
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicalTopicList;
 	private String userName;
@@ -18,8 +19,7 @@ public class Chatbot
 	/**
 	 * Creates an instance of the Chatbot with the supplied username.
 	 * 
-	 * @param userName
-	 *            The username for the chatbot.
+	 * @param userName The username for the chatbot.
 	 */
 	public Chatbot(String userName)
 	{
@@ -220,4 +220,5 @@ public class Chatbot
 	{
 		
 	}
+	
 }
