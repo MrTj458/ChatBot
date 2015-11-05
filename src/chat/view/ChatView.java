@@ -1,15 +1,24 @@
 package chat.view;
 
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 /**
  * This class provides GUI pop-ups for inputing and outputing Strings.
  * 
  * @author thod0127
- * @version 1.0 10/21/15
+ * @version 1.3 Added icon to display popups.
  */
 public class ChatView
 {
+	private String windowMessage;
+	private ImageIcon chatIcon;
+	
+	public ChatView()
+	{
+		windowMessage = "This message brought to you by the chatbot!";
+		chatIcon = new ImageIcon(getClass().getResource("images/dogeIconBetter.png"));
+	}
 	
 	/**
 	 * Shows a InputDialog GUI pop-up to get an answer from the user.
@@ -18,11 +27,11 @@ public class ChatView
 	 *            The message to be displayed.
 	 * @return answer as a String
 	 */
-	public String getAnswer(String displayMessage)
+	public String getAnswer(String displayText)
 	{
 		String answer = "";
 		
-		answer = JOptionPane.showInputDialog(null, displayMessage);
+		answer = JOptionPane.showInputDialog(null, displayText, windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon, null, "Type here please!").toString();
 		
 		return answer;
 	}
@@ -35,7 +44,7 @@ public class ChatView
 	 */
 	public void displayPopup(String displayMessage)
 	{
-		JOptionPane.showMessageDialog(null, displayMessage);
+		JOptionPane.showMessageDialog(null, displayMessage, windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon);
 	}
 	
 }
