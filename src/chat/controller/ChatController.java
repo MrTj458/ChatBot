@@ -7,7 +7,7 @@ import chat.model.Chatbot;
  * Controller for the Chatot project.
  * 
  * @author thod0127
- * @version 1.5 10/28/15 Now checks for memes.
+ * @version 1.5 10/28/15 Added randomly changing icons for pup-ups.
  */
 public class ChatController
 {

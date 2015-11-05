@@ -7,17 +7,21 @@ import javax.swing.ImageIcon;
  * This class provides GUI pop-ups for inputing and outputing Strings.
  * 
  * @author thod0127
- * @version 1.3 Added icon to display popups.
+ * @version 1.4 Added icon to display popups.
  */
 public class ChatView
 {
 	private String windowMessage;
-	private ImageIcon chatIcon;
+	private ImageIcon dogeIcon;
+	private ImageIcon fedoraManIcon;
+	private ImageIcon smileyIcon;
 	
 	public ChatView()
 	{
 		windowMessage = "This message brought to you by the chatbot!";
-		chatIcon = new ImageIcon(getClass().getResource("images/dogeIconBetter.png"));
+		dogeIcon = new ImageIcon(getClass().getResource("images/dogeIconBetter.png"));
+		fedoraManIcon = new ImageIcon(getClass().getResource("images/fedoraMan.png"));
+		smileyIcon = new ImageIcon(getClass().getResource("images/smiley.png"));
 	}
 	
 	/**
@@ -31,7 +35,7 @@ public class ChatView
 	{
 		String answer = "";
 		
-		answer = JOptionPane.showInputDialog(null, displayText, windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon, null, "Type here please!").toString();
+		answer = JOptionPane.showInputDialog(null, displayText, windowMessage, JOptionPane.PLAIN_MESSAGE, getRandomIcon(), null, "Type here please!").toString();
 		
 		return answer;
 	}
@@ -44,7 +48,23 @@ public class ChatView
 	 */
 	public void displayPopup(String displayMessage)
 	{
-		JOptionPane.showMessageDialog(null, displayMessage, windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon);
+		JOptionPane.showMessageDialog(null, displayMessage, windowMessage, JOptionPane.PLAIN_MESSAGE, getRandomIcon());
 	}
 	
+	private ImageIcon getRandomIcon()
+	{
+		int randomChoice = (int) (Math.random() * 3);
+		
+		switch(randomChoice)
+		{
+			case 0:
+				return dogeIcon;
+			case 1:
+				return fedoraManIcon;
+			case 2:
+				return smileyIcon;
+			default:
+				return dogeIcon;
+		}
+	}
 }
