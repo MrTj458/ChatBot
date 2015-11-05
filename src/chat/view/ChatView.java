@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
  * This class provides GUI pop-ups for inputing and outputing Strings.
  * 
  * @author thod0127
- * @version 1.4 Added icon to display popups.
+ * @version 1.6 Added more icons.
  */
 public class ChatView
 {
@@ -15,13 +15,17 @@ public class ChatView
 	private ImageIcon dogeIcon;
 	private ImageIcon fedoraManIcon;
 	private ImageIcon smileyIcon;
+	private ImageIcon creeperIcon;
+	private ImageIcon octocatIcon;
 	
 	public ChatView()
 	{
 		windowMessage = "This message brought to you by the chatbot!";
-		dogeIcon = new ImageIcon(getClass().getResource("images/dogeIconBetter.png"));
+		dogeIcon = new ImageIcon(getClass().getResource("images/dogeIcon.png"));
 		fedoraManIcon = new ImageIcon(getClass().getResource("images/fedoraMan.png"));
 		smileyIcon = new ImageIcon(getClass().getResource("images/smiley.png"));
+		creeperIcon = new ImageIcon(getClass().getResource("images/creeper.png"));
+		octocatIcon = new ImageIcon(getClass().getResource("images/octocat.png"));
 	}
 	
 	/**
@@ -53,7 +57,7 @@ public class ChatView
 	
 	private ImageIcon getRandomIcon()
 	{
-		int randomChoice = (int) (Math.random() * 3);
+		int randomChoice = (int) (Math.random() * 5);
 		
 		switch(randomChoice)
 		{
@@ -63,6 +67,10 @@ public class ChatView
 				return fedoraManIcon;
 			case 2:
 				return smileyIcon;
+			case 3:
+				return creeperIcon;
+			case 4:
+				return octocatIcon;
 			default:
 				return dogeIcon;
 		}
