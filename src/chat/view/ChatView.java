@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
  * This class provides GUI pop-ups for inputing and outputing Strings.
  * 
  * @author thod0127
- * @version 1.1 Added constructor
+ * @version 1.2 Added icon to the input window.
  */
 public class ChatView
 {
@@ -27,11 +27,11 @@ public class ChatView
 	 *            The message to be displayed.
 	 * @return answer as a String
 	 */
-	public String getAnswer(String displayMessage)
+	public String getAnswer(String displayText)
 	{
 		String answer = "";
 		
-		answer = JOptionPane.showInputDialog(null, displayMessage);
+		answer = JOptionPane.showInputDialog(null, displayText, windowMessage, JOptionPane.INFORMATION_MESSAGE, chatIcon, null, "Type here please!").toString();
 		
 		return answer;
 	}
