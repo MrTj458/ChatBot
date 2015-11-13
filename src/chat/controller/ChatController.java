@@ -41,6 +41,10 @@ public class ChatController
 			{
 				display.displayPopup("That's my favourite meme!");
 			}
+			else if(simpleBot.politicalTopicChecker(conversation))
+			{
+				display.displayPopup("What's with the political stuff?");
+			}
 			
 			conversation = display.getAnswer(conversation);
 		}
