@@ -1,7 +1,9 @@
 package chat.view;
 
 import chat.controller.ChatController;
+
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -30,8 +32,10 @@ public class ChatPanel extends JPanel
 	{
 		this.setLayout(baseLayout);
 		this.setBackground(Color.gray);
-		chatTextArea.setBackground(Color.lightGray);
 		this.add(chatTextArea);
+		chatTextArea.setBackground(Color.lightGray);
+		
+		
 		this.add(submitButton);
 		this.add(chatTextField);
 	}
@@ -45,8 +49,8 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, chatTextField, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatTextField, -6, SpringLayout.WEST, submitButton);
 		baseLayout.putConstraint(SpringLayout.NORTH, chatTextArea, 10, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatTextArea, 50, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, chatTextArea, -50, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatTextArea, 0, SpringLayout.WEST, chatTextField);
+		baseLayout.putConstraint(SpringLayout.EAST, chatTextArea, 0, SpringLayout.EAST, submitButton);
 	}
 	
 	private void setupListeners()
@@ -55,7 +59,30 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				chatTextArea.setText("You clicked the button!");
+				chatTextArea.setText(chatTextField.getText());
+				chatTextField.setText("Chat some more!");
+			}
+		});
+		
+		chatTextField.addKeyListener(new KeyListener()
+		{
+			public void keyTyped(KeyEvent typed)
+			{
+				
+			}
+			
+			public void keyPressed(KeyEvent pressed)
+			{
+				
+			}
+			
+			public void keyReleased(KeyEvent released)
+			{
+				if(released.getKeyCode() == KeyEvent.VK_ENTER)
+				{
+					chatTextArea.setText(chatTextField.getText());
+					chatTextField.setText("Chat some more!");
+				}
 			}
 		});
 	}
