@@ -49,6 +49,9 @@ public class Chatbot
 		this.memesList.add("pepe");
 	}
 	
+	/**
+	 * Adds all of the Strings to the political topics list.
+	 */
 	private void buildPoliticalTopicsList()
 	{
 		this.politicalTopicList.add("election");
@@ -67,6 +70,11 @@ public class Chatbot
 		this.politicalTopicList.add("11/4/16");
 	}
 	
+	/**
+	 * Checks if the inputed String contains real words or not.
+	 * @param currentInput
+	 * @return
+	 */
 	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean isMash = false;
@@ -79,6 +87,11 @@ public class Chatbot
 		return isMash;
 	}
 	
+	/**
+	 * Checks if the user enters 'quit' and quits the program if they did.
+	 * @param currentInput
+	 * @return
+	 */
 	public boolean quitChecker(String currentInput)
 	{
 		boolean hasQuit = false;
@@ -175,6 +188,11 @@ public class Chatbot
 		return isMeme;
 	}
 	
+	/**
+	 * Gets a random topic.
+	 * @param currentInput
+	 * @return
+	 */
 	public String processConversation(String currentInput)
 	{
 		String nextConversation = "What would you like to talk about next?";

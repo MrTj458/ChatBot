@@ -3,6 +3,11 @@ package chat.view;
 import chat.controller.ChatController;
 import javax.swing.JFrame;
 
+/**
+ * The JFrame for the GUI
+ * @author thod0127
+ *
+ */
 public class ChatFrame extends JFrame
 {
 	private ChatController baseController;

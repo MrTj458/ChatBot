@@ -7,6 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * This is the panel for the GUI. Contains all of the GUI components.
+ * @author thod0127
+ *
+ */
 public class ChatPanel extends JPanel
 {
 	private ChatController baseController;
