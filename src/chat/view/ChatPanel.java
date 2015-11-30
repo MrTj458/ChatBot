@@ -14,6 +14,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatTextArea;
 	private JButton submitButton;
 	private JTextField chatTextField;
+	private JLabel funnyLabel;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -22,6 +23,7 @@ public class ChatPanel extends JPanel
 		chatTextArea = new JTextArea("This is text.");
 		submitButton = new JButton("Submit");
 		chatTextField = new JTextField("Talk to the Chat Bot!");
+		funnyLabel = new JLabel("I ama  label :D");
 		
 		setupPanel();
 		setupLayout();
@@ -34,10 +36,11 @@ public class ChatPanel extends JPanel
 		this.setBackground(Color.gray);
 		this.add(chatTextArea);
 		chatTextArea.setBackground(Color.lightGray);
-		
-		
+		chatTextArea.setEnabled(false);
 		this.add(submitButton);
 		this.add(chatTextField);
+		chatTextField.setToolTipText("Type here for the Chat Bot");
+		this.add(funnyLabel);
 	}
 	
 	private void setupLayout()
@@ -48,9 +51,11 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, chatTextField, -1, SpringLayout.NORTH, submitButton);
 		baseLayout.putConstraint(SpringLayout.WEST, chatTextField, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatTextField, -6, SpringLayout.WEST, submitButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatTextArea, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatTextArea, 0, SpringLayout.WEST, chatTextField);
 		baseLayout.putConstraint(SpringLayout.EAST, chatTextArea, 0, SpringLayout.EAST, submitButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatTextArea, 6, SpringLayout.SOUTH, funnyLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, funnyLabel, 0, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, funnyLabel, 155, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()
@@ -85,5 +90,10 @@ public class ChatPanel extends JPanel
 				}
 			}
 		});
+	}
+	
+	public JTextField getTextField()
+	{
+		return chatTextField;
 	}
 }

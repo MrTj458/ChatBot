@@ -36,21 +36,48 @@ public class ChatController
 		String conversation = display.getAnswer("What would  like to talk about today?");
 		while (simpleBot.lengthChecker(conversation))
 		{
-			if(simpleBot.contentChecker(conversation))
+			if(simpleBot.keyboardMashChecker(conversation))
 			{
-				display.displayPopup("Wow I didn't know you liked " + simpleBot.getContent());
+				display.displayPopup("Wow such mash");
 			}
-			else if(simpleBot.memeChecker(conversation))
+			else
 			{
-				display.displayPopup("That's my favourite meme!");
-			}
-			else if(simpleBot.politicalTopicChecker(conversation))
-			{
-				display.displayPopup("What's with the political stuff?");
+				if(simpleBot.contentChecker(conversation))
+				{
+					display.displayPopup("Wow I didn't know you liked " + simpleBot.getContent());
+				}
+				else if(simpleBot.memeChecker(conversation))
+				{
+					display.displayPopup("That's my favourite meme!");
+				}
+				else if(simpleBot.politicalTopicChecker(conversation))
+				{
+					display.displayPopup("What's with the political stuff?");
+				}
+				else if(simpleBot.quitChecker(conversation))
+				{
+					display.displayPopup("Bye!");
+					System.exit(0);
+				}
 			}
 			
 			conversation = display.getAnswer(conversation);
 		}
+	}
+	
+	public Chatbot getChatbot()
+	{
+		return simpleBot;
+	}
+	
+	public ChatView getChatView()
+	{
+		return display;
+	}
+	
+	public ChatFrame getBaseFrame()
+	{
+		return chatFrame;
 	}
 	
 }

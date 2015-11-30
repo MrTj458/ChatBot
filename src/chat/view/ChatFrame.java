@@ -24,4 +24,9 @@ public class ChatFrame extends JFrame
 		this.setTitle("Chat Bot");
 		this.setVisible(true);
 	}
+	
+	public ChatController getBaseController()
+	{
+		return baseController;
+	}
 }
