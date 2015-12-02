@@ -6,13 +6,17 @@ import javax.swing.JFrame;
 /**
  * The JFrame for the GUI
  * @author thod0127
- *
+ * @version 1.0
  */
 public class ChatFrame extends JFrame
 {
 	private ChatController baseController;
 	private ChatPanel basePanel;
 	
+	/**
+	 * Default constructor for the JFrame.
+	 * @param baseController
+	 */
 	public ChatFrame(ChatController baseController)
 	{
 		this.baseController = baseController;
@@ -21,6 +25,9 @@ public class ChatFrame extends JFrame
 		setupFrame();
 	}
 	
+	/**
+	 * Sets up all of the settings for the JFrame.
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(basePanel);

@@ -8,7 +8,7 @@ import chat.model.Chatbot;
  * Controller for the Chatot project.
  * 
  * @author thod0127
- * @version 1.6 10/28/15 Added a check for political topics.
+ * @version 1.8 10/28/15 Added components for gui.
  */
 public class ChatController
 {
@@ -17,6 +17,9 @@ public class ChatController
 	private ChatView display;
 	private ChatFrame chatFrame;
 	
+	/**
+	 * Default constructor for the program.
+	 */
 	public ChatController()
 	{
 		display = new ChatView();
@@ -25,12 +28,18 @@ public class ChatController
 		chatFrame = new ChatFrame(this);
 	}
 	
+	/**
+	 * Runs on program startup.
+	 */
 	public void start()
 	{
 		//display.displayPopup("Hello " + simpleBot.getUserName() + ".");
 		//chat();
 	}
 	
+	/**
+	 * Controls all of the chatbot conversations throught popups.
+	 */
 	private void chat()
 	{
 		String conversation = display.getAnswer("What would  like to talk about today?");
@@ -41,6 +50,11 @@ public class ChatController
 		}
 	}
 	
+	/**
+	 * Connects the info from the chatPanel and the Chatbot.
+	 * @param conversation
+	 * @return
+	 */
 	public String fromUserToChatbot(String conversation)
 	{
 		String botResponse = "";
@@ -55,6 +69,9 @@ public class ChatController
 		return botResponse;
 	}
 	
+	/**
+	 * Closes the program when the user types 'quit'.
+	 */
 	private void shutDown()
 	{
 		display.displayPopup("Goodbye " + simpleBot.getUserName() + " See you again soon");

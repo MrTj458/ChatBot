@@ -3,7 +3,7 @@ package chat.model;
 import java.util.ArrayList;
 
 /**
- * Base version of the 2015 Chatbot class. Only stub methods are provided. Students will complete methods as part of the project.
+ * Contains all of the methods and info for the Chatot.
  * 
  * @author Trevor Hodsdon
  * @version 1.7 11/13/15 Added the politicalTopicChecker and added values to politicalTopicsList

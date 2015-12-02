@@ -18,6 +18,9 @@ public class ChatView
 	private ImageIcon creeperIcon;
 	private ImageIcon octocatIcon;
 	
+	/**
+	 * Default constructor for the ChatView.
+	 */
 	public ChatView()
 	{
 		windowMessage = "This message brought to you by the chatbot!";
@@ -55,6 +58,10 @@ public class ChatView
 		JOptionPane.showMessageDialog(null, displayMessage, windowMessage, JOptionPane.PLAIN_MESSAGE, getRandomIcon());
 	}
 	
+	/**
+	 * Gets a random ImageIcon and returns it.
+	 * @return
+	 */
 	private ImageIcon getRandomIcon()
 	{
 		int randomChoice = (int) (Math.random() * 5);

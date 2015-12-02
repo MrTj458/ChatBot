@@ -10,7 +10,7 @@ import java.awt.event.*;
 /**
  * This is the panel for the GUI. Contains all of the GUI components.
  * @author thod0127
- *
+ * @version 1.7 Added the submitted method.
  */
 public class ChatPanel extends JPanel
 {
@@ -21,6 +21,10 @@ public class ChatPanel extends JPanel
 	private JTextField chatTextField;
 	private JLabel funnyLabel;
 	
+	/**
+	 * Default constructor for the JPanel.
+	 * @param baseController
+	 */
 	public ChatPanel(ChatController baseController)
 	{
 		this.baseController = baseController;
@@ -35,6 +39,9 @@ public class ChatPanel extends JPanel
 		setupListeners();
 	}
 	
+	/**
+	 * Sets up the panel by adding all of the components and their settings.
+	 */
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
@@ -48,6 +55,9 @@ public class ChatPanel extends JPanel
 		this.add(funnyLabel);
 	}
 	
+	/**
+	 * Sets up the locations for all of the components.
+	 */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.SOUTH, submitButton, -10, SpringLayout.SOUTH, this);
@@ -63,6 +73,9 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, funnyLabel, 155, SpringLayout.WEST, this);
 	}
 	
+	/**
+	 * Sets up the listeners for the submitButton and the chatTextField.
+	 */
 	private void setupListeners()
 	{
 		submitButton.addActionListener(new ActionListener()
@@ -95,6 +108,9 @@ public class ChatPanel extends JPanel
 		});
 	}
 	
+	/**
+	 * Sends the user input to the controller and displays the chatbot's response.
+	 */
 	private void submitted()
 	{
 		if(!chatTextField.getText().equals(""))
