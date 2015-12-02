@@ -20,15 +20,15 @@ public class ChatController
 	public ChatController()
 	{
 		display = new ChatView();
-		chatFrame = new ChatFrame(this);
 		String user = display.getAnswer("What is your name?");
 		simpleBot = new Chatbot(user);
+		chatFrame = new ChatFrame(this);
 	}
 	
 	public void start()
 	{
-		display.displayPopup("Hello " + simpleBot.getUserName() + ".");
-		chat();
+		//display.displayPopup("Hello " + simpleBot.getUserName() + ".");
+		//chat();
 	}
 	
 	private void chat()
@@ -39,6 +39,26 @@ public class ChatController
 			conversation = simpleBot.processConversation(conversation);
 			conversation = display.getAnswer(conversation);
 		}
+	}
+	
+	public String fromUserToChatbot(String conversation)
+	{
+		String botResponse = "";
+		
+		if(simpleBot.quitChecker(conversation))
+		{
+			shutDown();
+		}
+		
+		botResponse = simpleBot.processConversation(conversation);
+		
+		return botResponse;
+	}
+	
+	private void shutDown()
+	{
+		display.displayPopup("Goodbye " + simpleBot.getUserName() + " See you again soon");
+		System.exit(0);
 	}
 	
 	public Chatbot getChatbot()

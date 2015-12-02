@@ -25,9 +25,9 @@ public class ChatPanel extends JPanel
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
-		chatTextArea = new JTextArea("This is text.");
+		chatTextArea = new JTextArea("Hello " + baseController.getChatbot().getUserName() + " What would you like to talk about?");
 		submitButton = new JButton("Submit");
-		chatTextField = new JTextField("Talk to the Chat Bot!");
+		chatTextField = new JTextField();
 		funnyLabel = new JLabel("I am a label :D");
 		
 		setupPanel();
@@ -77,27 +77,34 @@ public class ChatPanel extends JPanel
 		{
 			public void keyTyped(KeyEvent typed)
 			{
-				
+
 			}
 			
 			public void keyPressed(KeyEvent pressed)
 			{
-				
+				if(pressed.getKeyCode() == KeyEvent.VK_ENTER)
+				{
+					submitted();
+				}
 			}
 			
 			public void keyReleased(KeyEvent released)
 			{
-				if(released.getKeyCode() == KeyEvent.VK_ENTER)
-				{
-					submitted();
-				}
+				
 			}
 		});
 	}
 	
 	private void submitted()
 	{
-		
+		if(!chatTextField.getText().equals(""))
+		{
+			String userText = chatTextField.getText();
+			String response = baseController.fromUserToChatbot(userText);
+			chatTextArea.append("\nUser: " + userText);
+			chatTextArea.append("\nChatBot: " + response);
+			chatTextField.setText("");
+		}
 	}
 	
 	public JTextField getTextField()

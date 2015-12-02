@@ -196,8 +196,13 @@ public class Chatbot
 	public String processConversation(String currentInput)
 	{
 		String nextConversation = "What would you like to talk about next?";
-		int randomTopic = (int) (Math.random() * 5); //Random number between 0 and 4.
 		
+		if(keyboardMashChecker(currentInput))
+		{
+			return "Wow such mash";
+		}
+		
+		int randomTopic = (int) (Math.random() * 5); //Random number between 0 and 4.
 		switch(randomTopic)
 		{
 			case 0:
