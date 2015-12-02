@@ -203,7 +203,7 @@ public class Chatbot
 			case 0:
 				if(contentChecker(currentInput))
 				{
-					nextConversation = "You tal about my special topic! What else do you like?";
+					nextConversation = "You talked about my special topic! What else do you like?";
 				}
 				break;
 			case 1:
@@ -219,7 +219,7 @@ public class Chatbot
 				}
 				break;
 			case 3:
-				if(currentInput.contains("like cars"))
+				if(currentInput.contains("cars"))
 				{
 					nextConversation = "I like cars too! Do you like cats?";
 				}

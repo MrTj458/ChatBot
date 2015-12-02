@@ -28,7 +28,7 @@ public class ChatPanel extends JPanel
 		chatTextArea = new JTextArea("This is text.");
 		submitButton = new JButton("Submit");
 		chatTextField = new JTextField("Talk to the Chat Bot!");
-		funnyLabel = new JLabel("I ama  label :D");
+		funnyLabel = new JLabel("I am a label :D");
 		
 		setupPanel();
 		setupLayout();
@@ -69,8 +69,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				chatTextArea.setText(chatTextField.getText());
-				chatTextField.setText("Chat some more!");
+				submitted();
 			}
 		});
 		
@@ -90,11 +89,15 @@ public class ChatPanel extends JPanel
 			{
 				if(released.getKeyCode() == KeyEvent.VK_ENTER)
 				{
-					chatTextArea.setText(chatTextField.getText());
-					chatTextField.setText("Chat some more!");
+					submitted();
 				}
 			}
 		});
+	}
+	
+	private void submitted()
+	{
+		
 	}
 	
 	public JTextField getTextField()
