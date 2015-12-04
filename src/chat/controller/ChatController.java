@@ -74,7 +74,7 @@ public class ChatController
 	 */
 	private void shutDown()
 	{
-		display.displayPopup("Goodbye " + simpleBot.getUserName() + " See you again soon");
+		display.displayPopup("Goodbye " + simpleBot.getUserName() + ", see you again soon");
 		System.exit(0);
 	}
 	

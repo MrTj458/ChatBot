@@ -32,7 +32,7 @@ public class ChatPanel extends JPanel
 		chatTextArea = new JTextArea("Hello " + baseController.getChatbot().getUserName() + " What would you like to talk about?");
 		submitButton = new JButton("Submit");
 		chatTextField = new JTextField();
-		funnyLabel = new JLabel("I am a label :D");
+		funnyLabel = new JLabel("Talking to " + baseController.getChatbot().getUserName() + ".");
 		
 		setupPanel();
 		setupLayout();
