@@ -27,13 +27,16 @@ public class twitterPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
+		this.setSize(new Dimension(130, 100));
 		this.add(tweetButton);
 		this.add(checkTwitterButton);
 	}
 	
 	private void setupLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.SOUTH, checkTwitterButton, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, tweetButton, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, tweetButton, 22, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()
