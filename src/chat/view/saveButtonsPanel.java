@@ -5,19 +5,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class twitterPanel extends JPanel
+public class saveButtonsPanel extends JPanel
 {
 	private ChatController baseController;
 	private SpringLayout baseLayout;
-	private JButton tweetButton;
-	private JButton checkTwitterButton;
+	private JButton saveButton;
+	private JButton openButton;
 	
-	public twitterPanel(ChatController baseController)
+	public saveButtonsPanel(ChatController baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
-		tweetButton = new JButton("Tweet");
-		checkTwitterButton = new JButton("Check Twitter");
+		saveButton = new JButton("Save");
+		openButton = new JButton("Open");
 		
 		setupPanel();
 		setupLayout();
@@ -27,18 +27,17 @@ public class twitterPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.add(tweetButton);
-		this.add(checkTwitterButton);
 	}
 	
 	private void setupLayout()
 	{
-		
+		this.add(saveButton);
+		this.add(openButton);
 	}
 	
 	private void setupListeners()
 	{
-		tweetButton.addActionListener(new ActionListener()
+		saveButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
@@ -46,7 +45,7 @@ public class twitterPanel extends JPanel
 			}
 		});
 		
-		checkTwitterButton.addActionListener(new ActionListener()
+		openButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
