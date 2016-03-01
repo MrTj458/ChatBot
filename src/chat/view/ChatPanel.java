@@ -21,6 +21,8 @@ public class ChatPanel extends JPanel
 	private JButton submitButton;
 	private JTextField chatTextField;
 	private JLabel funnyLabel;
+	private SaveButtonsPanel savePanel;
+	private TwitterPanel twitterPanel;
 	
 	/**
 	 * Default constructor for the JPanel.
@@ -34,6 +36,9 @@ public class ChatPanel extends JPanel
 		chatTextField = new JTextField();
 		funnyLabel = new JLabel("Talking to " + baseController.getChatbot().getUserName() + ".");
 		chatTextArea = new JTextArea("Hello " + baseController.getChatbot().getUserName() + " What would you like to talk about?");
+		savePanel = new SaveButtonsPanel(baseController);
+		twitterPanel = new TwitterPanel(baseController);
+		
 		
 		setupChatPane();
 		setupPanel();
@@ -48,6 +53,10 @@ public class ChatPanel extends JPanel
 		chatTextArea.setEnabled(false);
 		chatTextArea.setEditable(false);
 		textPane = new JScrollPane(chatTextArea);
+		baseLayout.putConstraint(SpringLayout.NORTH, savePanel, 0, SpringLayout.NORTH, textPane);
+		baseLayout.putConstraint(SpringLayout.EAST, savePanel, -6, SpringLayout.WEST, textPane);
+		baseLayout.putConstraint(SpringLayout.EAST, twitterPanel, -6, SpringLayout.WEST, textPane);
+		baseLayout.putConstraint(SpringLayout.WEST, textPane, 147, SpringLayout.WEST, this);
 		textPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		textPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
@@ -64,6 +73,10 @@ public class ChatPanel extends JPanel
 		this.add(chatTextField);
 		chatTextField.setToolTipText("Type here for the Chat Bot");
 		this.add(funnyLabel);
+		this.add(savePanel);
+		savePanel.setBackground(Color.GREEN);
+		this.add(twitterPanel);
+		twitterPanel.setBackground(Color.CYAN);
 	}
 	
 	/**
@@ -75,10 +88,14 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, submitButton, -10, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, chatTextField, -1, SpringLayout.NORTH, submitButton);
 		baseLayout.putConstraint(SpringLayout.WEST, chatTextField, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, twitterPanel, 200, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, twitterPanel, 9, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, twitterPanel, -35, SpringLayout.NORTH, chatTextField);
 		baseLayout.putConstraint(SpringLayout.EAST, chatTextField, -6, SpringLayout.WEST, submitButton);
+		baseLayout.putConstraint(SpringLayout.WEST, savePanel, 0, SpringLayout.WEST, chatTextField);
+		baseLayout.putConstraint(SpringLayout.SOUTH, savePanel, 144, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, chatTextArea, 6, SpringLayout.SOUTH, funnyLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, textPane, 25, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, textPane, 100, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, textPane, 325, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.EAST, textPane, -20, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatTextArea, 114, SpringLayout.WEST, this);

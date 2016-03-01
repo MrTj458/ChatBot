@@ -5,14 +5,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class twitterPanel extends JPanel
+public class TwitterPanel extends JPanel
 {
 	private ChatController baseController;
 	private SpringLayout baseLayout;
 	private JButton tweetButton;
 	private JButton checkTwitterButton;
 	
-	public twitterPanel(ChatController baseController)
+	public TwitterPanel(ChatController baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();

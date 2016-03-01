@@ -5,14 +5,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class saveButtonsPanel extends JPanel
+public class SaveButtonsPanel extends JPanel
 {
 	private ChatController baseController;
 	private SpringLayout baseLayout;
 	private JButton saveButton;
 	private JButton openButton;
 	
-	public saveButtonsPanel(ChatController baseController)
+	public SaveButtonsPanel(ChatController baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
