@@ -32,7 +32,7 @@ public class CTECTwitter
 	{
 		try
 		{
-			chatbotTwitter.updateStatus("Everyone follow @tjhod!");
+			chatbotTwitter.updateStatus(message);
 		}
 		catch (TwitterException error)
 		{

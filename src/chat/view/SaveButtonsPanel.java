@@ -27,7 +27,7 @@ public class SaveButtonsPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.setSize(new Dimension(130, 100));
+		this.setPreferredSize(new Dimension(130, 100));
 		this.add(saveButton);
 		this.add(openButton);
 	}
