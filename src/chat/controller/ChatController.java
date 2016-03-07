@@ -85,6 +85,11 @@ public class ChatController
 		display.displayPopup(error);
 	}
 	
+	public void sendTweet(String tweet)
+	{
+		chatTwitter.sendTweet(tweet);
+	}
+	
 	public Chatbot getChatbot()
 	{
 		return simpleBot;

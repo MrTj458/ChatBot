@@ -45,7 +45,7 @@ public class TwitterPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				baseController.sendTweet("tweet");
 			}
 		});
 		
