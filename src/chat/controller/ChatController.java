@@ -90,6 +90,13 @@ public class ChatController
 		chatTwitter.sendTweet(tweet);
 	}
 	
+	public String analyze(String userName)
+	{
+		String userAnalysis = "The Twitter user " + userName + " Has ....";
+		
+		return userAnalysis;
+	}
+	
 	public Chatbot getChatbot()
 	{
 		return simpleBot;

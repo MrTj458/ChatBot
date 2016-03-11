@@ -8,14 +8,16 @@ import java.awt.event.*;
 public class TwitterPanel extends JPanel
 {
 	private ChatController baseController;
+	private ChatPanel basePanel;
 	private SpringLayout baseLayout;
 	private JButton tweetButton;
 	private JButton checkTwitterButton;
 	private JTextField tweetField;
 	
-	public TwitterPanel(ChatController baseController)
+	public TwitterPanel(ChatController baseController, ChatPanel basePanel)
 	{
 		this.baseController = baseController;
+		this.basePanel = basePanel;
 		baseLayout = new SpringLayout();
 		tweetButton = new JButton("Tweet");
 		checkTwitterButton = new JButton("Check Twitter");
@@ -67,7 +69,9 @@ public class TwitterPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				String user = basePanel.getTextField().getText();
+				String results = baseController.analyze(user);
+				basePanel.getTextArea().setText(results);
 			}
 		});
 	}

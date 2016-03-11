@@ -37,7 +37,7 @@ public class ChatPanel extends JPanel
 		funnyLabel = new JLabel("Talking to " + baseController.getChatbot().getUserName() + ".");
 		chatTextArea = new JTextArea("Hello " + baseController.getChatbot().getUserName() + " What would you like to talk about?");
 		savePanel = new SaveButtonsPanel(baseController);
-		twitterPanel = new TwitterPanel(baseController);
+		twitterPanel = new TwitterPanel(baseController, this);
 		
 		setupChatPane();
 		setupPanel();
@@ -152,5 +152,10 @@ public class ChatPanel extends JPanel
 	public JTextField getTextField()
 	{
 		return chatTextField;
+	}
+	
+	public JTextArea getTextArea()
+	{
+		return chatTextArea;
 	}
 }
