@@ -65,7 +65,20 @@ public class CTECTwitter
 	
 	private List removeCommonEnglishWords(List<String> wordsList)
 	{
-		return null;
+		String[] boringWords = importWordsToArray();
+		
+		for(int count = 0; count < wordsList.size(); count++)
+		{
+			for(int removeSpot = 0; removeSpot < boringWords.length; removeSpot++)
+			{
+				if(wordsList.get(count).equalsIgnoreCase(boringWords[removeSpot]))
+				{
+					wordsList.remove(count);
+					count--;
+					removeSpot = boringWords.length;
+				}
+			}
+		}
 	}
 	
 	private String removePunctuation(String currentString)
