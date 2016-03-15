@@ -1,6 +1,8 @@
 package chat.model;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 import java.util.List;
 import twitter4j.*;
 import chat.controller.ChatController;
@@ -121,5 +123,35 @@ public class CTECTwitter
 				wordCount--;
 			}
 		}
+	}
+	
+	private String[] importWordsToArray()
+	{
+		String[] boringWords;
+		int wordCount = 0;
+		try
+		{
+			Scanner wordFile = new Scanner(new File("commonWords.txt"));
+			while(wordFile.hasNext())
+			{
+				wordCount++;
+				wordFile.next();
+			}
+			wordFile.reset();
+			boringWords = new String[wordCount];
+			int boringWordCount = 0;
+			while(wordFile.hasNext())
+			{
+				boringWords[boringWordCount] = wordFile.next();
+				boringWordCount++;
+			}
+			wordFile.close();
+		}
+		catch(FileNotFoundException error)
+		{
+			baseController.handleErrors(error.getMessage());
+			return new String[0];
+		}
+		return boringWords;
 	}
 }
