@@ -79,6 +79,9 @@ public class CTECTwitter
 				}
 			}
 		}
+		removeTwitterUsernamesFromList(wordsList);
+		
+		return wordsList;
 	}
 	
 	private String removePunctuation(String currentString)
