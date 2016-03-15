@@ -79,7 +79,7 @@ public class CTECTwitter
 				}
 			}
 		}
-		removeTwitterUsernamesFromList(wordsList);
+//		removeTwitterUsernamesFromList(wordsList);
 		
 		return wordsList;
 	}
@@ -107,6 +107,18 @@ public class CTECTwitter
 			{
 				wordsList.remove(spot);
 				spot--;
+			}
+		}
+	}
+	
+	private void removeTwitterUsernamesFromList(List<String> wordsList)
+	{
+		for(int wordCount = 0; wordCount < wordsList.size(); wordCount++)
+		{
+			if(wordsList.get(wordCount).length() >= 1 && wordsList.get(wordCount).charAt(0) == '@')
+			{
+				wordsList.remove(wordCount);
+				wordCount--;
 			}
 		}
 	}
