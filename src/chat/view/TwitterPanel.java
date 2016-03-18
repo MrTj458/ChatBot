@@ -67,7 +67,7 @@ public class TwitterPanel extends JPanel
 			{
 				String user = basePanel.getTextField().getText();
 				String results = baseController.analyze(user);
-				basePanel.getTextArea().setText(results);
+				basePanel.getTextArea().append(results + "\n");
 			}
 		});
 	}
