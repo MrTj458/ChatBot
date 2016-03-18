@@ -27,17 +27,17 @@ public class SaveButtonsPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.setPreferredSize(new Dimension(130, 100));
+		this.setPreferredSize(new Dimension(130, 80));
 		this.add(saveButton);
 		this.add(openButton);
 	}
 	
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.WEST, openButton, 26, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, openButton, -10, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, saveButton, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, saveButton, 27, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, openButton, 6, SpringLayout.SOUTH, saveButton);
+		baseLayout.putConstraint(SpringLayout.WEST, openButton, 26, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()
