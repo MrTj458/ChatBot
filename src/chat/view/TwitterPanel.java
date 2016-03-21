@@ -12,6 +12,7 @@ public class TwitterPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JButton tweetButton;
 	private JButton checkTwitterButton;
+	private JButton investigateButton;
 	
 	public TwitterPanel(ChatController baseController, ChatPanel basePanel)
 	{
@@ -20,6 +21,7 @@ public class TwitterPanel extends JPanel
 		baseLayout = new SpringLayout();
 		tweetButton = new JButton("Tweet");
 		checkTwitterButton = new JButton("Check Twitter");
+		investigateButton = new JButton("Investigate");
 		
 		setupPanel();
 		setupLayout();
@@ -29,15 +31,18 @@ public class TwitterPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.setPreferredSize(new Dimension(200, 80));
+		this.setPreferredSize(new Dimension(200, 118));
 		this.add(tweetButton);
 		this.add(checkTwitterButton);
+		this.add(investigateButton);
 	}
 	
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.NORTH, tweetButton, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, tweetButton, 59, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, investigateButton, 6, SpringLayout.SOUTH, checkTwitterButton);
+		baseLayout.putConstraint(SpringLayout.WEST, investigateButton, 43, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, checkTwitterButton, 6, SpringLayout.SOUTH, tweetButton);
 		baseLayout.putConstraint(SpringLayout.WEST, checkTwitterButton, 34, SpringLayout.WEST, this);
 	}
@@ -68,6 +73,15 @@ public class TwitterPanel extends JPanel
 				String user = basePanel.getTextField().getText();
 				String results = baseController.analyze(user);
 				basePanel.getTextArea().append(results + "\n");
+			}
+		});
+		
+		investigateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String result = baseController.investigate();
+				basePanel.getTextArea().append(result + "\n");
 			}
 		});
 	}

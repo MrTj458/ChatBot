@@ -109,6 +109,12 @@ public class ChatController
 		return userAnalysis;
 	}
 	
+	public String investigate()
+	{
+		String result = chatTwitter.investigation();
+		return result;
+	}
+	
 	public Chatbot getChatbot()
 	{
 		return simpleBot;
