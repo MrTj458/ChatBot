@@ -181,21 +181,21 @@ public class CTECTwitter
 			return boringWords;
 	}
 	
-	public String investigation()
+	public String investigation(String searchWord)
 	{
 		String results = "";
 		
-		Query query = new Query("minecraft");
+		Query query = new Query(searchWord);
 		query.setCount(100);
-		query.setGeoCode(new GeoLocation(40.587521, -111.869178), 30, Query.MILES);
+		query.setGeoCode(new GeoLocation(40.587521, -111.869178), 100, Query.MILES);
 		query.setSince("2016-1-1");
 		try
 		{
 			QueryResult result = chatbotTwitter.search(query);
-			results.concat("Count: " + result.getTweets().size());
+			results += ("Count: " + result.getTweets().size());
 			for(Status tweet : result.getTweets())
 			{
-				results.concat("@" + tweet.getUser().getName() + ": " + tweet.getText() + "\n");
+				results += ("@" + tweet.getUser().getName() + ": " + tweet.getText() + "\n");
 			}
 		}
 		catch(TwitterException error)

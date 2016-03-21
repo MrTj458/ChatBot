@@ -80,7 +80,7 @@ public class TwitterPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				String result = baseController.investigate();
+				String result = baseController.investigate(basePanel.getTextField().getText());
 				basePanel.getTextArea().append(result + "\n");
 			}
 		});

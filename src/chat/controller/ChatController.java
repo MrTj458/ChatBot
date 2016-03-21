@@ -109,9 +109,9 @@ public class ChatController
 		return userAnalysis;
 	}
 	
-	public String investigate()
+	public String investigate(String word)
 	{
-		String result = chatTwitter.investigation();
+		String result = chatTwitter.investigation(word);
 		return result;
 	}
 	
