@@ -35,7 +35,7 @@ public class ChatPanel extends JPanel
 		submitButton = new JButton("Submit");
 		chatTextField = new JTextField();
 		funnyLabel = new JLabel("Talking to " + baseController.getChatbot().getUserName() + ".");
-		chatTextArea = new JTextArea("Hello " + baseController.getChatbot().getUserName() + " What would you like to talk about?\n");
+		chatTextArea = new JTextArea("ChatBot: Hello " + baseController.getChatbot().getUserName() + " What would you like to talk about?\n");
 		savePanel = new SaveButtonsPanel(baseController);
 		twitterPanel = new TwitterPanel(baseController, this);
 		

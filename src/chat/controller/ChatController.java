@@ -4,6 +4,7 @@ import chat.view.ChatView;
 import twitter4j.TwitterException;
 import chat.view.ChatFrame;
 import chat.model.Chatbot;
+
 import chat.model.CTECTwitter;
 
 /**
@@ -130,4 +131,21 @@ public class ChatController
 		return chatFrame;
 	}
 	
+	public boolean politicsCheck(String words, boolean displayAnswer)
+	{
+		boolean returnValue = false;
+		String result = "";
+		
+		if(simpleBot.politicalTopicChecker(words))
+		{
+			returnValue = true;
+			
+			if(displayAnswer)
+			{
+				this.getBaseFrame().getBasePanel().getTextArea().append("\nChatBot: There is a political topic in here!\n");
+			}
+		}
+		
+		return returnValue;
+	}
 }

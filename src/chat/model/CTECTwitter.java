@@ -1,7 +1,5 @@
 package chat.model;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.List;
 import twitter4j.*;
@@ -187,16 +185,18 @@ public class CTECTwitter
 		
 		Query query = new Query(searchWord);
 		query.setCount(100);
-		query.setGeoCode(new GeoLocation(40.587521, -111.869178), 100, Query.MILES);
+		query.setGeoCode(new GeoLocation(40.587521, -111.869178), 10000000, Query.MILES);
 		query.setSince("2016-1-1");
 		try
 		{
 			QueryResult result = chatbotTwitter.search(query);
-			results += ("Count: " + result.getTweets().size());
+			results += ("Count: " + result.getTweets().size() + "\n\n");
 			for(Status tweet : result.getTweets())
 			{
 				results += ("@" + tweet.getUser().getName() + ": " + tweet.getText() + "\n");
 			}
+			
+			baseController.politicsCheck(result.getTweets().toString(), true);
 		}
 		catch(TwitterException error)
 		{
