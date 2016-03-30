@@ -23,7 +23,7 @@ public class IOController
 			chatWriter.write("This is the " + fileName + "\n");
 			chatWriter.write(textToSave);
 			chatWriter.close();
-			JOptionPane.showMessageDialog(null, "Fiel saved as: " + fileName);
+			JOptionPane.showMessageDialog(null, "Field saved as: " + fileName);
 		}
 		catch(IOException ioError)
 		{
@@ -46,7 +46,7 @@ public class IOController
 				text += chatScanner.nextLine();
 			}
 			chatScanner.close();
-			JOptionPane.showMessageDialog(null, fileName + " was load to the chat area");
+			JOptionPane.showMessageDialog(null, fileName + " was load to the chat area\n");
 		}
 			catch(IOException ioError)
 			{

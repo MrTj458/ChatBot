@@ -19,6 +19,7 @@ public class SaveButtonsPanel extends JPanel
 	public SaveButtonsPanel(ChatController baseController, ChatPanel basePanel)
 	{
 		this.baseController = baseController;
+		this.basePanel = basePanel;
 		baseLayout = new SpringLayout();
 		saveButton = new JButton("Save");
 		openButton = new JButton("Open");
@@ -54,6 +55,7 @@ public class SaveButtonsPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				String temp = basePanel.getTextArea().getText();
 				String file = IOController.saveFile(basePanel.getTextArea().getText());
 				promptLabel.setText(file);
 			}
